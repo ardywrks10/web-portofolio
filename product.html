@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOGO Mart | Tempat Belanja Termurah</title>
+    <link href="dist/output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <!--Navigasi Bar-->
+    <header class="bg-transparent opacity-100 fixed top-0 left-0 flex items-center z-10 w-full">
+        <div class="container">
+            <div class="flex items-center justify-between relative">
+                <div class="px-4">
+                    <a href="#home" class=" block text-xl py-6 font-extrabold text-green-600 lg:text-2xl">GOGO<span class="text-orange-600"> MART</span></a>
+                </div>
+                <div class="flex items-center px-4">
+                    <!-- <button  id="burger" @click="burgerButton" name = "burger" class="block absolute right-4 lg:hidden">
+                        <span class="trasition duration-200 w-7 h-0.5 my-2 block bg-slate-800"></span>
+                        <span class="trasition duration-200 w-5 h-0.5 my-2 block bg-slate-800"></span>
+                        <span class="trasition duration-200 w-7 h-0.5 my-2 block bg-slate-800"></span>
+                    </button> -->
+                    <nav id="navigasi" class="hidden absolute py-5 bg-white
+                    shadow-lg rounded-lg max-w-[175px] w-full right-5 top-full lg:block lg:static lg:max-w-full lg:shadow-none lg:bg-transparent">
+                        <ul class="block lg:flex">
+                            <li><a class = "group font-semibold  hover:text-green-400 px-3  text-green-500
+                                 py-3 mx-8 flex lg:font-semibold" href="#home">Home</a></li>
+                            <li><a class = "bg-orange-600 rounded-lg px-3 group font-semibold text-white hover:text-white
+                                 py-3 mx-8 flex lg:font-semibold" href="#keranjang">Keranjang</a></li>
+                        </ul> 
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id ="home" class="pt-28 pb-10 lg:pb-20">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full self-center px-8 lg:w-1/2">
+                    <h1 class="block font-extrabold text-dark text-3xl mt-3 mb-3 lg:text-4xl">Tempat Belanja Termurah, Terpercaya dan Praktis</h1>
+                    <p class="font-medium text-secondary mb-5 mt-5 leading-relaxed text-justify text-lg">
+                        Ayo pilih keperluanmu dan nikmati beragam promo yang tersedia
+                    </p>
+                    <a href="#keranjang" class="flex bg-green-500 w-[100px] p-3 rounded-lg ">
+                        <svg class="fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M13.5 18c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm-3.5 1.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm13.257-14.5h-1.929l-3.473 12h-13.239l-4.616-11h2.169l3.776 9h10.428l3.432-12h4.195l-.743 2zm-13.537 4.183l-2.325-2.183-1.395 1.435 3.746 3.565 6.559-6.592-1.422-1.408-5.163 5.183z"/></svg>
+                        <p class="font-semibold text-white ml-2">Pesan</p>
+                    </a>
+                </div>
+                <div class="w-full self-end px-8 lg:w-1/2 mx-auto">
+                    <div class=" relative mt-10 lg:mt-9 lg:right-0 ">
+                        <img class="hover:scale-110 transition rounded-full duration-300 ease-in-out lg:w-[450px]" src="img/Hijau Putih Kuning Lingkaran Sederhana Pertanian Logo (1).png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-28 pb-20 bg-slate-700">
+      <div class="container">
+          <div>
+              <div class="text-center mb-16">
+                  <div class="flex justify-center">
+                      <div id="pre-title" class=" text-md lg:text-3xl font-bold mb-2 tracking-widest text-white">Promo Bulanan</div>
+                  </div>
+              </div>
+          </div>
+          <div class="flex flex-wrap xl:w-10/12 xl:mx-auto">
+              <div class="w-full px-4 lg:w-1/3">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 transition duration-300 ease-in-out ">
+                      <img src="img/gambardiskon.jpg" alt="Ilustrasi Tweak" class="w-full">
+                      <div class="py-7 px-6">
+                          <div class="text-center">
+                              <h3 class="mb-5 font-semibold text-dark">Voucher Amatir (10%)</h3>
+                          </div>
+                          <p class="mb-5 text-sm text-secondary text-justify lg:text"> Promo bulan hari raya, setiap pembelian pelanggan mendapatkan diskon sebesar
+                            10%
+                          </p>
+                          <div class="text-center">
+                            <a class=" bg-green-500 py-2 text-white rounded-full px-4 hover:bg-green-600" href="">Lihat Detail</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="w-full px-4 lg:w-1/3">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 transition duration-300 ease-in-out ">
+                      <img src="img/gambardiskon2.png" alt="Ilustrasi Tweak" class="w-full">
+                      <div class="py-7 px-6">
+                          <div class="text-center">
+                              <h3 class="mb-5 font-semibold text-dark">Voucher Medium (20%)</h3>
+                          </div>
+                          <p class="mb-5 text-sm text-secondary text-justify lg:text">Hanya dengan membeli voucher medium, nikmati diskon sebesar 20% setiap kali
+                            belanja selama satu bulan</p>
+                            <div class="text-center">
+                              <a class=" bg-green-500 py-2 text-white rounded-full px-4 hover:bg-green-600" href="">Lihat Detail</a>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="w-full px-4 lg:w-1/3">
+                  <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 transition duration-300 ease-in-out ">
+                      <img src="img/gambardiskon3.jpg" alt="Ilustrasi Tweak" class="w-full">
+                      <div class="py-7 px-6">
+                          <div class="text-center">
+                              <h3 class="mb-5 font-semibold text-dark">Voucher Expert (25%)</h3>
+                          </div>
+                          <p class="mb-5 text-sm text-secondary text-justify lg:text">
+                            Hanya dengan membeli voucher medium, nikmati diskon sebesar 25% setiap kali
+                            belanja selama satu bulan
+                          </p>
+                          <div class="text-center">
+                            <a class=" bg-green-500 py-2 text-white rounded-full px-4 hover:bg-green-600" href="">Lihat Detail</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+    <section id="keranjang" class="pt-20 pb-20 bg-slate-100">
+        <div class="container">
+            <div class="flex flex-wrap">
+              <div class="overflow-y-auto h-[600px] w-full px-4 lg:w-2/3 lg:px-8 bg-white rounded-lg p-4 mb-16">
+                <h2 class="font-extrabold text-dark text-xl mt-5 mb-5">List Barang</h2>
+                <div class="mb-6 lg:mb-10 lg:flex">
+                  <select v-model="selectedCategory" class="bg-green-500 text-white py-2 px-3 font-semibold w-full rounded-sm lg:w-auto lg:rounded-l-lg mb-3 lg:mb-0">
+                    <option  value="Semua Barang" class="bg-white text-slate-600 font-semibold">Pilih Barang</option>
+                    <option v-for="(item, index) in items" :value="item.type" :key="item.id" class="bg-white text-slate-600 font-medium">
+                      {{ item.type }}
+                    </option>
+                  </select>
+                  <div class="relative w-full">
+                    <input type="search" id="search-dropdown" v-model="selectedSearch" class="block p-2 lg:p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-sm lg:rounded-r-lg lg:border-l-gray-50 border-l-2 border border-gray-300"  placeholder="Chitato, Lays, Rexona, Beras ">
+                    <button type="submit" class="absolute top-0 right-0 p-2 lg:p-2.5 text-sm font-medium h-full text-white bg-green-500 rounded-sm lg:rounded-r-lg border border-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                        <span class="sr-only">Search</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="mb-5">
+                  <li v-for="(item, index) in filteredBarang" :key="index" class="flex flex-col lg:flex-row lg:items-center lg:justify-between py-2 border-b border-gray-300">
+                    <div class="flex items-center mb-3 lg:mb-0">
+                      <img :src="item.gambar" alt="" class="w-16 h-16 lg:w-28 lg:h-28 mb-2 lg:mb-0">
+                      <div class="ml-5">
+                        <h3 class="font-semibold text-dark text-sm lg:text-base">{{ item.nama }}</h3>
+                        <p class="text-secondary">{{ item.deksripsi }}</p>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <p class="font-medium text-dark mr-10 lg:mr-3 text-sm lg:text-md">{{ formatRupiah(item.harga) }}</p>
+                      <div class="flex items-center">
+                        <button v-on:click="tambahBarang(index, item)" class="mr-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </button>
+                        <p class="font-semibold text-dark mr-3">{{item.jumlahbrg}}</p>
+                        <button v-on:click="hapusBarang(index, item)">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>                                      
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+                <div class="w-full lg:w-1/3 scroll lg:px-8">
+                    <div class="bg-white rounded-lg p-6 mb-10">
+                      <div  class="header-nota text-center mb-5">
+                          <h2 class="font-bold text-dark text-lg mb-4">Keranjang</h2>
+                      </div>
+                      <hr>
+                      <ul id="daftar-keranjang" class="mb-4">
+                        <li v-for="(item, index) in keranjang" :key="index" class="flex justify-between py-2 border-b border-gray-300">
+                          <div class="flex items-center">
+                            <img :src="item.gambar" alt="" class="w-16 h-16 mb-2 mr-3">
+                            <div>
+                              <h3 class="font-semibold text-dark text-sm">{{ item.nama }}</h3>
+                              <p class="text-secondary text-sm">Jumlah barang : {{ item.jumlahbrg }}</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="main-nota mt-5">
+                        <p class="mb-2 text-md font-bold">Total Item   : <span id="jumlah-item" class="font-normal" v-text="jumlahItem"></span></p>
+                        <div class="flex flex-wrap mb-4">
+                          <p class=" text-md font-bold">Voucher Pilihan : </p>
+                          <select v-model="selectedPromo"  name="" id="" class=" text-dark px-3 bg-white">
+                            <option  v-for="(item, index) in promo" :value="item.type" :key="item.id" class="bg-white text-slate-600">
+                              {{ item.type }}
+                            </option>
+                          </select>
+                        </div>
+                        <button @click = "lihatDetail = true" class="w-full bg-green-500 text-white font-semibold py-2 rounded-md hover:bg-green-600 text-md">Detail Transaksi</button>
+                    </div>
+                    </div>
+                    <div id="total" class=" bg-white rounded-lg p-6" v-if="lihatDetail">
+                      <div class="header-nota text-center mb-5">
+                          <h2 class="font-bold  text-lg mb-4 text-green-500">Gogo <span class="text-orange-500">Mart</span></h2>
+                          <p>Jalan Pulau Batam, Banyuning, Bali - Indonesia</p>
+                      </div>
+                      <hr>
+                      <div class="main-nota mt-5">
+                          <p class="mb-4 text-md font-bold">Jumlah Item   : <span id="jumlah-item" class="font-normal" v-text="jumlahItem"></span></p>
+                          <p class="mb-4 text-md font-bold mt-4">Total Belanja : <span id="total-belanja" class="font-normal" v-text="formatRupiah(totalBelanja)"></span></p>
+                          <p class="mb-4 text-md font-bold">Diskon : <span id="total-diskon" class="font-normal" v-text="formatRupiah(totalDiskon)"></span></p>
+                          <p class="mb-4 text-md font-bold mt-4">PPn (11%) : <span id="total-pembayaran" class="font-normal" v-text="formatRupiah(pajakBangungan)"></span></p>
+                      </div>
+                      <hr>
+                      <p class="mb-4 text-md font-bold mt-4">Total Pembayaran : <span id="total-pembayaran" class="font-normal" v-text="formatRupiah(totalPembayaran)"></span></p>
+                      <button @click = "bayar" class="w-full bg-green-500 text-white font-semibold py-2 rounded-md hover:bg-green-600 text-md">Pesan</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section >
+    <footer class="pt-12 pb-12 bg-slate-800 ">
+      <div class="flex flex-wrap mx-auto px-5 text-white xl:w-11/12">
+        <div class="lg:w-1/4 px-5 pb-4 text-lg">
+          <p class="mb-10 lg:mb-10">Gogo Mart</p>
+          <img src="img/Hijau Putih Kuning Lingkaran Sederhana Pertanian Logo (1).png" alt="" class="w-36 h-36 rounded-full">
+        </div>
+        <div  class="lg:w-1/4 px-5 pb-4">
+          <p class="text-lg mb-8">Contact Us</p>
+          <p class="text-sm mb-8 text-slate-300">Jalan Pulau Batam, Banyuning, Bali - Indonesia</p>
+          <p class="text-sm">Email: <span class="text-slate-300">gogomart@gmail.com</span>, Phone: <span class="text-slate-300">+62 824 457 888</span></p>
+        </div>
+        <div  class="lg:w-1/4 px-5 pb-4">
+          <p class="text-lg mb-8">Follow Us</p>
+          <p class="text-sm mb-8">Klik untuk bergabung ke komunitas</p>
+          <a href="https://instagram.com/skrwydra_?igshid=NGVhN2U2NjQ0Yg=="><p class="text-sm mb-3 hover:text-white text-slate-300">Instagram</p></a>
+          <a href="https://www.facebook.com/ardy.wirakusuma.5?mibextid=ZbWKwL"><p class="text-sm mb-8 hover:text-white text-slate-300">Facebook</p></a>
+        </div>
+        <div  class="lg:w-1/4 px-5 pb-4">
+          <p class="text-lg mb-8">Toko Online</p>
+          <a href="#home"><p class="text-sm mb-3 hover:text-white text-slate-300">Home</p></a>
+          <a href="#keranjang"><p class="text-sm mb-8 hover:text-white text-slate-300">Keranjang</p></a>
+        </div>
+      </div>
+    </footer>
+  <script> 
+
+  new Vue({
+    el: '#keranjang',
+    data: {
+      jumlahItem: 0,
+      totalBelanja: 0,
+      totalBayar:0,
+      keranjang: [],
+      lihatDetail: false,
+      selectedCategory:'Makanan',
+      selectedPromo:'Amatir',
+      selectedSearch:'',
+      
+      items : [{
+        id:1,
+        type: 'Makanan',
+        }, {
+        id:2,
+        type: 'Minuman',
+        }, {
+        id:3,
+        type: 'Pembersih',
+        },{
+        id:4,
+        type: 'Alat Sekolah/Kantor',
+        }, {
+        id:5,
+         type: 'Lain - lain'
+        }],
+       
+      promo : [{
+        id:1,
+        type: 'Amatir',
+        diskon:0.1
+       }, {
+        id:2,
+        type: 'Medium',
+        diskon:0.2,
+       }, {
+        id:3,
+        type: 'Expert',
+        diskon:0.25,
+       }],
+
+      barang : [{
+        id:1,
+        nama:'Coca Cola',
+        harga:5000,
+        gambar:'img/coca cola.jpeg',
+        kategori:'Minuman',
+        jumlahbrg:0,
+      }, {
+        id:2,
+        nama:'Sprite',
+        harga:5000,
+        gambar:'img/sprite.jpg',
+        kategori:'Minuman',
+        jumlahbrg:0,
+      }, {
+        id:3,
+        nama:'Fanta',
+        harga:5000,
+        gambar:'img/fanta.jpg',
+        kategori:'Minuman',
+        jumlahbrg:0,
+      }, {
+        id:4,
+        nama:'Floridina',
+        harga:3000,
+        gambar:'img/floridina.jpg',
+        kategori:'Minuman',
+        jumlahbrg:0,
+      }, {
+        id:5,
+        nama:'Aqua 600 ml',
+        harga:3000,
+        gambar:'img/aqua tanggung.jpg',
+        kategori:'Minuman',
+        jumlahbrg:0,
+      }, {
+        id:6,
+        nama:'Aqua 1500 ml',
+        harga:5000,
+        gambar:'img/aqua besar.jpg',
+        kategori:'Minuman',
+        jumlahbrg:0,
+      }, {
+         id:7,
+         nama:'Chitato BBQ 68 gram',
+         harga:9800,
+         gambar:'img/chitato68.jpg',
+         kategori:'Makanan',
+         jumlahbrg:0,
+       }, {
+        id:8,
+         nama:'Waffelo Caramel 50gr',
+         harga:2000,
+         gambar:'img/waffelo.jpg',
+         kategori:'Makanan',
+         jumlahbrg:0,
+       }, {
+        id:9,
+         nama:'Nextar Choco Brownies',
+         harga:2000,
+         gambar:'img/nextar.jpg',
+         kategori:'Makanan',
+         jumlahbrg:0,
+       }, {
+        id:10,
+         nama:'Roma Kelapa 300 gram',
+         harga:9500,
+         gambar:'img/roma.jpg',
+         kategori:'Makanan',
+         jumlahbrg:0,
+       }, {
+        id:11,
+         nama:'Soklin Detergent 550 gram',
+         harga:10000,
+         gambar:'img/soklin.jpeg',
+         kategori:'Pembersih',
+         jumlahbrg:0,
+       }, {
+        id:12,
+         nama:'Wipol 200 ml',
+         harga:5000,
+         gambar:'img/wipol.jpeg',
+         kategori:'Pembersih',
+         jumlahbrg:0,
+       }, {
+        id:14,
+         nama:'Daia Violet 770 gram',
+         harga:18000,
+         gambar:'img/daia.png',
+         kategori:'Pembersih',
+         jumlahbrg:0,
+       }, {
+        id:15,
+         nama:'Sidu 38 lembar/lusin',
+         harga:45000,
+         gambar:'img/bukusidu.jpg',
+         kategori:'Alat Sekolah/Kantor',
+         jumlahbrg:0,
+       }, {
+        id:16,
+         nama:'Pulpen Standard Box',
+         harga:20700,
+         gambar:'img/pulpen.jpg',
+         kategori:'Alat Sekolah/Kantor',
+         jumlahbrg:0,
+       }],
+      ind: null,
+      },
+      methods: {
+        formatRupiah(number) {
+          const formatter = new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+          });
+          return formatter.format(number);
+        },
+        tambahBarang(ind, p) {
+          this.ind = ind;
+          p.jumlahbrg ++;
+          this.jumlahItem += 1;
+          this.totalBelanja += p.harga;
+
+          const barangKeranjang = this.keranjang.find((item) => item.id === p.id);
+          if (barangKeranjang) {
+              barangKeranjang.jumlahbrg++;
+          } else {
+              this.keranjang.push({ id: p.id, nama: p.nama, harga: p.harga, gambar: p.gambar, jumlahbrg: 1 });
+            }
+        }, 
+        // burgerButton(){
+        //   const burger = document.querySelector('#burger');
+        //   const nav    = document.querySelector('#navigasi');
+
+        //   burger.classList.toggle('burger_active');
+        //   nav.classList.toggle('hidden');
+        // },
+        hapusBarang(ind, i) {
+          this.ind = ind;
+          i.jumlahbrg--;
+          if (this.totalBelanja - i.harga <= 0) {
+            this.totalBelanja = 0;
+            this.jumlahItem = 0;
+            i.jumlahbrg = 0;
+          }
+          else {
+          this.jumlahItem -=1;
+          this.totalBelanja -= i.harga;
+          }
+          const indexToRemove = this.keranjang.findIndex((item) => item.id === i.id);
+          if (indexToRemove !== -1) {
+            const barangKeranjang = this.keranjang[indexToRemove];
+            if (barangKeranjang.jumlahbrg > 1) {
+            barangKeranjang.jumlahbrg--;
+          } else {
+            this.keranjang.splice(indexToRemove, 1);
+          }
+        }
+       },
+       hapusDetail() {
+        const detail = document.getElementById("total");
+        detail.style.display = "none";
+       },
+       bayar() {
+        Swal.fire({
+          title: 'Konfirmasi Pemesanan',
+          text: 'Anda yakin ingin melakukan pemesanan?',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Pesan',
+          cancelButtonText: 'Batal',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            if (this.totalBelanja == 0) {
+              Swal.fire('Pemesanan Gagal', 'Pilih minimal satu barang.', 'info');
+              this.lihatDetail = false;
+            }
+            else {
+              Swal.fire('Pemesanan Berhasil!', 'Terimakasih telah berbelanja.', 'success');
+              this.jumlahItem = 0;
+              this.totalBelanja = 0;
+              this.barang.forEach((item) => {
+              item.jumlahbrg = 0;
+              this.keranjang.splice(this.keranjang);
+              this.lihatDetail = false;
+            });
+            }
+          } else {
+            Swal.fire('Pemesanan Dibatalkan', 'Anda membatalkan pemesanan.', 'info');
+          }
+        });
+      },
+    },
+     computed: {
+       filteredBarang() {
+        if (this.selectedCategory === 'Semua Kategori') {
+           return this.barang.filter((item) => {
+           return item.nama.toLowerCase().includes(this.selectedSearch.toLowerCase());        
+        });
+        } else {
+          return this.barang.filter((item) => {
+            return item.kategori === this.selectedCategory && item.nama.toLowerCase().includes(this.selectedSearch.toLowerCase());
+          });
+        }
+      },
+       totalDiskon() {
+          const promo = this.promo.find((p) => p.type === this.selectedPromo);
+          if (promo) {
+            return this.totalBelanja * promo.diskon;
+          } else {
+            return 0;
+          }
+
+      } ,
+      pajakBangungan() {
+        const promo = this.promo.find((p) => p.type === this.selectedPromo);
+          return (this.totalBelanja - (this.totalBelanja*promo.diskon)) * 0.11;
+        },
+      totalPembayaran() {
+        const promo = this.promo.find((p) => p.type === this.selectedPromo);
+        return (this.totalBelanja - (this.totalBelanja*promo.diskon)) + (this.totalBelanja - (this.totalBelanja*promo.diskon)) * 0.11;
+      },
+     }
+  });
+
+  </script>
+</body>
+</html>
