@@ -22,3 +22,4 @@ header {
 .burger_active > span:nth-child(2) {
     @apply scale-0;
 }
+

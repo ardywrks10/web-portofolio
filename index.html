@@ -1,38 +1,79 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio | Ardy Wirakusuma</title>
-    <link href="dist/output.css" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portofolio | Ardy Wirakusuma</title>
+        <link href="dist/output.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">          
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+            @layer utilities {
+                .nav{
+                    @apply relative ml-10 text-gray-500 font-bold tracking-[1px]
+                    hover:text-blue-500;
+                }
+                .nav::after {
+                    @apply content-[''] bg-blue-700 h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300;
+                }
+                .nav:hover::after {
+                    @apply w-[100%];
+                }
+            }
+        </style>
+        <style>
+            #dark-toggle:checked ~ label div.toggle-circle {
+                transform: translateX(0.75rem);
+            }
+            
+            .txt {
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                animation:
+                    typing 4s steps(21),
+                    cursor .4s step-end infinite alternate;
+            }
+
+            @keyframes cursor {
+                50% { border-color: white}
+            }
+
+            @keyframes typing {
+                from { width: 0}
+            }
+        </style>
+        
+    </head>
+    
 <body>
-    <header class="bg-slate-800 fixed top-0 left-0 flex items-center z-10 w-full">
+    <header class="bg-white fixed top-0 left-0 flex items-center z-10 w-full">
         <div class="container">
             <div class="flex items-center justify-between relative">
                 <div class="px-4">
-                    <a href="#home" class=" block text-xl py-6 font-extrabold text-violet-500 lg:text-2xl">SKRW<span class="text-slate-50">YDRA</span></a>
+                    <a href="#home" class=" block text-xl py-6 font-extrabold text-[#004AAD] lg:text-2xl">SKRW<span class="text-slate-800">YDRA</span></a>
                 </div>
                 <div class="flex items-center px-4">
                     <button id="burger" name = "burger" class="block absolute right-4 lg:hidden">
-                        <span class="trasition duration-200 w-7 h-0.5 my-2 block bg-slate-50"></span>
-                        <span class="trasition duration-200 w-5 h-0.5 my-2 block bg-slate-50"></span>
-                        <span class="trasition duration-200 w-7 h-0.5 my-2 block bg-slate-50"></span>
+                        <span class="trasition duration-200 w-7 h-0.5 my-1.5 lg:my-2 block bg-slate-900"></span>
+                        <span class="trasition duration-200 w-5 h-0.5 my-1.5 lg:my-2 block bg-slate-900"></span>
+                        <span class="trasition duration-200 w-7 h-0.5 my-1.5 lg:my-2 block bg-slate-900"></span>
                     </button>
                     <nav id="navigasi" class="hidden absolute py-5 bg-white
-                    shadow-lg rounded-lg max-w-[175px] w-full right-5 top-full lg:block lg:static lg:max-w-full lg:shadow-none lg:bg-transparent">
+                    shadow-lg rounded-sm max-w-[175px] w-full right-5 top-full lg:block lg:static lg:max-w-full lg:shadow-none lg:bg-transparent">
                         <ul class="block lg:flex">
-                            <li><a class = "group font-semibold text-slate-800 hover:text-violet-400 
-                                lg:text-slate-50 py-3 mx-8 flex lg:font-semibold" href="#home">Home</a></li>
-                            <li><a class = "group font-semibold text-slate-800 hover:text-violet-400 
-                                lg:text-slate-50 py-3 mx-8 flex lg:font-semibold" href="#about">About</a></li>
-                            <li><a class = "group font-semibold text-slate-800 hover:text-violet-400 
-                                lg:text-slate-50 py-3 mx-8 flex lg:font-semibold" href="#portofolio">Portfolio</a></li>
-                            <li><a class = "group font-semibold text-slate-800 hover:text-violet-400 
-                                lg:text-slate-50 py-3 mx-8 flex lg:font-semibold" href="#contact">Contact Me</a></li>
-                            <li><a class = "group font-semibold text-slate-800 hover:text-violet-400 
-                                lg:text-slate-50 py-3 mx-8 flex lg:font-semibold" href="product.html">Product</a></li>
+                            <li><a class = "nav group font-semibold text-slate-800  hover:text-[#004AAD]
+                                lg:text-slate-800 py-3 mx-8 flex lg:font-semibold" href="#home">Home</a></li>
+                            <li><a class = "nav group font-semibold text-slate-800  hover:text-[#004AAD]
+                                lg:text-slate-800 py-3 mx-8 flex lg:font-semibold" href="#about">About</a></li>
+                            <li><a class = "nav group font-semibold text-slate-800  hover:text-[#004AAD]
+                                lg:text-slate-800 py-3 mx-8 flex lg:font-semibold" href="#portofolio">Portfolio</a></li>
+                            <li><a class = "nav group font-semibold text-slate-800  hover:text-[#004AAD]
+                                lg:text-slate-800 py-3 mx-8 flex lg:font-semibold" href="#contact">Contact Me</a></li>
+                            <li><a class = "nav group font-semibold text-slate-800  hover:text-[#004AAD]
+                                lg:text-slate-800 py-3 mx-8 flex lg:font-semibold" href="product.html">Product</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -40,24 +81,29 @@
         </div>
     </header>
 
-    <section id ="home" class="pt-28 pb-10 lg:pb-20">
-        <div class="container">
+    <section id ="home" class="bg-slate-900 dark:bg-dark pt-28 pb-10 lg:pb-20 ">
+        <div class="container ">
             <div class="flex flex-wrap">
-                <div class="w-full self-center px-8 lg:w-1/2">
+                <div class="w-full self-center px-4 lg:w-3/5">
                     <div class = "flex">
-                        <span class="w-7 h-1 bg-slate-600 mt-2.5 mr-2"></span>
-                        <h1 class="text-lg font-semibold text-dark tracking-widest md:text-xl"><span class="text-primary">Selamat datang!</span> perkenalkan saya</h1>
+                        <h1 class="text-lg font-semibold text-white tracking-widest md:text-xl"><span class="text-blue-500">Selamat datang!</span> perkenalkan saya</h1>
                     </div>
-                    <span class="block font-extrabold text-dark text-3xl mt-3 mb-3 lg:text-4xl">Kadek Ardy Wirakusuma</span>
+                    <p class="txt font-extrabold block text-white mt-3 mb-3 text-2xl lg:text-4xl">Kadek Ardy Wirakusuma</p>
                     <!-- <h2 class="font-medium text-secondary text-lg mb-4 lg:text-2xl">Mahasiswa | Drummer</h2> -->
-                    <p class="font-medium text-secondary mb-5 mt-5 leading-relaxed text-justify">
-                        Seorang mahasiswa Universitas Pendidikan Ganesha yang memiliki cinta terhadap seni, 
-                        terutama seni musik. Terima kasih sudah berkunjung!
+                    <p class="font-medium text-gray-400 mb-5 mt-5 leading-relaxed text-justify">
+                        Menusia biasa yang tertarik pada teknologi dan juga memiliki cinta terhadap seni, 
+                        terutama seni musik, dan 
+                        terimakasih saya ucapkan kepada teman - teman yang sudah berkunjung
                     </p>
+                    <div class=" flex w-32 lg:w-40  text-sm lg:text-md items-center tracking-widest justify-center py-2.5 px-1 font-bold mr-3 text-center text-white rounded-md bg-[#004AAD] hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                        <a href="#portofolio" class="mr-2">
+                            Portofolio
+                        </a>                 
+                    </div>
                 </div>
-                <div class="w-full self-end px-8 lg:w-1/2 mx-auto">
+                <div class="w-full pl-10 lg:w-2/5 mx-auto">
                     <div class=" relative mt-10 lg:mt-9 lg:right-0 ">
-                        <img class="hover:scale-110 transition duration-300 ease-in-out shadow-2xl rounded-full" src="img/20230929_163527-removebg-preview.png" alt="">
+                        <img class="hover:scale-110 lg:h-full transition duration-300 ease-in-out rounded-full" src="img/zeke.png" alt="">
                     </div>
                 </div>
             </div>
@@ -66,41 +112,39 @@
 
     <section id = "about" class="pt-28 pb-20 bg-slate-100">
         <div class="container">
-            <div class="pb-20">
-                <div class="flex justify-center">
-                    <span class="w-7 h-1 bg-slate-800 mt-2.5 mr-2"></span>
-                    <div id="pre-title" class=" text-slate-800 text-md font-bold mb-2 lg:text-2xl tracking-widest">About</div>
-                    <span class="w-7 h-1 bg-slate-800 mt-2.5 ml-2"></span>
+            <div class="pb-10">
+                <div class="flex">
+                    <div id="pre-title" class=" text-slate-800 text-xl font-extrabold mb-2 lg:text-2xl text-md tracking-widest"><span class="text-[#004AAD]">Website</span> dan Media Sosial</div>
                 </div>
             </div>
             <div class="flex flex-wrap">
-                <div class="w-full px-4 mb-10 lg:w-1/2">
-                    <h4 class=" text-dark font-bold mb-3 lg:text-lg">Tentang Website Ini</h4>
+                <div class="w-full lg:pr-4 mb-10 lg:w-1/2">
+                    <h4 class=" text-dark font-bold mb-3 lg:text-lg">Tentang Website</h4>
                     <p class="text-justify text-slate-600 lg:text-lg">
                         Website ini mencakup minat, hobi, pendidikan maupun pengalaman berharga yang pernah
                         saya tempuh dan juga website ini digunakan untuk belajar seputar mata kuliah Teknologi Web.
                     </p>
                 </div>
-                <div class="w-full px-4 mb-10 lg:w-1/2">
+                <div class="w-full lg:px-4 mb-10 lg:w-1/2">
                     <h3 class=" text-dark font-bold mb-3 lg:text-lg">Media Sosial</h3>
-                    <p class="text-justify text-slate-600 lg:text-lg">
+                    <p class="text-justify text-slate-600 lg:text-lg mb-5">
                         Terdapat beberapa media sosial yang saya miliki, apabila teman - teman ingin berkomunikasi dan tetap terhubung silahkan klik 
                         ikon di bawah ini.
                     </p>
                     <div class="flex items-center mt-3">
-                        <a href="https://instagram.com/skrwydra_?igshid=NGVhN2U2NjQ0Yg==" target="_blank" class="mr-3 w-8 h-8 rounded-full flex items-center justify-center border border-black hover:bg-purple-500 hover:fill-white hover:border-violet-500">
+                        <a href="https://instagram.com/skrwydra_?igshid=NGVhN2U2NjQ0Yg==" target="_blank" class="mr-3 w-7 h-7 rounded-full flex items-center justify-center border transition duration-300 ease-in-out border-black hover:bg-blue-500 hover:fill-white hover:border-[#004AAD]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
-                        <a href="https://www.facebook.com/ardy.wirakusuma.5?mibextid=ZbWKwL" target="_blank" class="mr-3 w-8 h-8 rounded-full flex items-center justify-center border border-black hover:bg-violet-500 hover:fill-white hover:border-violet-500">
+                        <a href="https://www.facebook.com/ardy.wirakusuma.5?mibextid=ZbWKwL" target="_blank" class="mr-3 w-7 h-7 rounded-full flex items-center justify-center border transition duration-300 ease-in-out border-black hover:bg-blue-500 hover:fill-white hover:border-[#004AAD]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                             <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
                         </a>
-                        <a href="https://github.com/ardywrks10" target="_blank" class="mr-3 w-8 h-8 rounded-full flex items-center justify-center border border-black hover:bg-violet-500 hover:fill-white hover:border-violet-500">
+                        <a href="https://github.com/ardywrks10" target="_blank" class="mr-3 w-7 h-7 rounded-full flex items-center justify-center border border-black hover:bg-blue-500 transition duration-300 ease-in-out hover:fill-white hover:border-[#004AAD]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         </a>
-                        <a href="https://x.com/achiles0303?t=h9pvQZv5oxE7A_Tna1ftAg&s=09" target="_blank" class="mr-3 w-8 h-8 rounded-full flex items-center justify-center border border-black hover:bg-violet-500 hover:fill-white hover:border-violet-500">
+                        <a href="https://x.com/achiles0303?t=h9pvQZv5oxE7A_Tna1ftAg&s=09" target="_blank" class="mr-3 w-7 h-7 rounded-full flex items-center justify-center border border-black hover:bg-blue-500 hover:fill-white hover:border-[#004AAD]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                             <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
                         </a>
@@ -110,97 +154,76 @@
         </div>
     </section>
 
-    <section class="pt-28 pb-20 bg-slate-50">
-        <div class="container">
-            <div>
-                <div class="text-center mb-16">
-                    <div class="flex justify-center">
-                        <span class="w-7 h-1 bg-slate-600 mt-2.5 mr-2"></span>
-                        <div id="pre-title" class=" text-slate-800 text-md lg:text-2xl font-bold mb-2 tracking-widest">Minat</div>
-                        <span class="w-7 h-1 bg-slate-600 mt-2.5 ml-2"></span>
+    <section class="bg-gray-50 ">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
+            <!-- Row -->
+            <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+                <div class="flex">
+                    <img class="hidden w-1/2 xl:h-[350px] mt-10 mb-4 rounded-lg lg:mb-0 lg:flex mr-8 shadow-lg hover:scale-105 transition duration-300 ease-in-out" src="img/programming.jpg" alt="dashboard feature image">
+                    <div>
+                        <img class="hidden mb-4 w-full xl:h-[200px] rounded-lg lg:mb-5 lg:flex mb shadow-lg hover:scale-105 transition duration-300 ease-in-out" src="img/drummer.jpeg" alt="dashboard feature image">
+                        <img class="hidden mb-4 w-full xl:h-[200px] rounded-lg lg:mb-0 lg:flex shadow-lg hover:scale-105 transition duration-300 ease-in-out" src="img/chef.jpg" alt="dashboard feature image">
                     </div>
-                    <p class="text-sm text-secondary lg:text-lg">Terdapat beberapa minat yang saya gemari dan juga saya dalami hingga sekarang</p>
                 </div>
+                <div class="text-gray-500 sm:text-lg dark:text-gray-400">
+                    <h2 class="mb-4 text-xl font-extrabold tracking-widest text-gray-900 ">Apa saja hal yang <span class="text-[#004AAD]">Diminati</span>?</h2>
+                    <p class="mb-8 font-light lg:text-lg">Dalam dunia yang penuh inovasi dan keindahan, saya sangat mengagumi teknologi dan seni. Oleh karena itu, beberapa minat saya tidak jauh terkait dengan kedua bidang tersebut.</p>
+                    <!-- List -->
+                    <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-[#004AAD] dark:text-[#004AAD]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-semibold leading-tight text-gray-500 ">Web Developer</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-[#004AAD] dark:text-[#004AAD]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-semibold leading-tight text-gray-500 ">Chef</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-[#004AAD] dark:text-[#004AAD]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-base font-semibold leading-tight text-gray-500 ">Professional Drummer</span>
+                        </li>
+                    </ul>
+                    <!-- <p class="mb-8 font-light lg:text-lg">Setiap helai kain batik menjadi pengingat akan keberagaman dan keunikan Indonesia</p> -->
+                </div>.
             </div>
-            <div class="w-full flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-                <div class="mb-12 p-4 rounded-lg md:w-1/3">
-                    <div class="w-full shadow-md overflow-hidden rounded-lg transition duration-300 ease-in-out hover:scale-110">
-                        <img src="img/PRock.jpg" alt="">
-                    </div>
-                    <h3 class="font-semibold text-md text-center text-dark mt-5 mb-4 xl:text-xl">Musik</h3>
-                    <p class="text-secondary text-sm lg:text-lg text-justify">Saya telah mengembangkan minat yang kuat dalam dunia musik sejak saya masih kecil. Dari awal, saya tertarik pada berbagai alat musik, 
-                        seperti drum, gitar, dan pianika.</p>
-                </div>
-                <div class="mb-12 p-4 rounded-lg md:w-1/3">
-                    <div class="w-full shadow-md overflow-hidden rounded-lg transition duration-300 ease-in-out hover:scale-110">
-                        <img src="img/html-system-websites-concept.jpg" alt="">
-                    </div>
-                    <h3 class="font-semibold text-md text-center text-dark mt-5 mb-4 xl:text-xl">Komputer</h3>
-                    <p class="text-secondary text-sm lg:text-lg text-justify">Minat saya dalam dunia komputer telah ada sejak masih SMP. 
-                        Pascal merupakan bahasa pemrograman pertama yang saya pelajari ketika SMA.</p>
-                </div>
-                <div class="mb-12 p-4 rounded-lg md:w-1/3">
-                    <div class="w-full shadow-md overflow-hidden rounded-lg transition duration-300 ease-in-out hover:scale-110">
-                        <img src= "img/masak_brokoli.jpg" alt="" width="w-full">
-                    </div>
-                    <h3 class="font-semibold text-md text-center text-dark mt-5 mb-4 xl:text-xl">Dunia Masak</h3>
-                    <p class="text-secondary text-sm lg:text-lg text-justify">Berawal dari sering membantu ibu dalam urusan masak, membuat 
-                        saya tertarik untuk mempelajari resep - resep masakan di media sosial</p>
-                </div>
-            </div>
+            <!-- Row -->
         </div>
-    </section>
-
-    <section class="pt-28 pb-20 bg-slate-800">
+  </section>
+    <section id="diskon" class="bg-slate-900  mx-auto pt-20 lg:pb-24">
         <div class="container">
-            <div>
-                <div class="text-center mb-16">
-                    <div class="flex justify-center">
-                        <span class="w-7 h-1 bg-slate-50 mt-2.5 mr-2"></span>
-                        <div id="pre-title" class=" text-slate-50 text-2md font-bold mb-2 lg:text-2xl tracking-widest">Hobi</div>
-                        <span class="w-7 h-1 bg-slate-50 mt-2.5 ml-2"></span>
-                    </div>
-                    <p class="text-sm text-slate-400 lg:text-lg">Berikut merupakan sedikit dokumentasi dari beberapa kegiatan 
-                        yang pernah saya ikuti
-                        bedasarkan hobi yang saya tekuni
-                    </p>
-                </div>
-            </div>
-            <div class="relative mb-12 xl:mx-auto xl:w-7/12 ">
-                <ul class="slider">
-                    <li class="img-slide h-[40vh] relative lg:h-[68vh]">
-                        <img class="h-full w-full object-cover rounded-lg" src="img/FB_IMG_1695783211509.jpg" alt="Concert at School">
-                    </li>
-                    <li class="img-slide h-[40vh] relative hidden lg:h-[68vh]">
-                        <img class="h-full w-full object-cover rounded-lg" src="img/FB_IMG_1695798000035.jpg" alt="Concert at School">
-                    </li>
-                </ul>
-                <div class="absolute px-3 flex top-0 w-full h-full left-0">
-                    <div class="my-auto w-full flex justify-between p">
-                        <button onClick="nextSlide(-1)" class=" bg-white p-2 rounded-full text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
-                              </svg>
-                        </button>
-                        <button onClick="nextSlide(1)" class="bg-white p-2 rounded-full text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                              </svg>
-                        </button>
+            <div class="text-center w-9/12 mx-auto">
+                <div id="pre-title" class=" text-white text-lg font-extrabold mb-2 lg:text-xl text-md tracking-widest"><span class="text-blue-500">Hobi</span></div>
+                <div id="pre-title" class=" text-white text-lg font-extrabold mb-2 lg:text-xl text-md "><span class="text-white text-2xl tracking-widest">Hobi dan Kreativitas</span></div>
+                <div id="pre-title" class=" text-white text-lg font-semibold mb-2 lg:text-xl text-md pt-8"><span class="text-gray-300 text-sm tracking-widest">Hobi bukan hanya sekadar kegiatan hiburan, tetapi juga sebuah bentuk ekspresi diri yang memungkinkan saya menyampaikan emosi dan energi positif</span></div>
+            </div>            
+            <div class="mx-auto">
+                <div id="app" class="w-full px-4 lg:px-2">
+                    <div id="controls-carousel" class="relative" data-carousel="static">
+                        <div class="flex items-center justify-center"> 
+                            <div class="relative w-[720px] h-[600px] overflow-hidden rounded-lg carousel-wrapper">
+                                <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === activeIndex }">
+                                    <img :src="item.image" alt="" class="lg:h-[500px] h-[300px] w-[720px] mt-24 rounded-md">
+                                    <div class="bg-white p-4 absolute bottom-0 left-0 w-full text-center">
+                                        <p class="lg:text-sm text-[9px] font-bold text-slate-900 pt-1 pb-1 lg:pb-3">{{ item.caption }}</p>
+                                        <p class="lg:text-sm text-[9px] font-medium mb-1 lg:pb-3 text-gray-400">{{ item.text }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section class="pt-28 pb-20 bg-slate-50">
         <div class="container">
             <div>
                 <div class="text-center mb-16">
                     <div class="flex justify-center">
-                        <span class="w-7 h-1 bg-slate-600 mt-2.5 mr-2"></span>
-                        <div id="pre-title" class=" text-md lg:text-2xl font-bold mb-2 tracking-widest">Learning <span class="text-primary">Path</span></div>
-                        <span class="w-7 h-1 bg-slate-600 mt-2.5 ml-2"></span>
+                        <div id="pre-title" class=" text-2xl lg:text-2xl font-extrabold mb-2 tracking-widest">Learning <span class="text-[#004AAD]">Path</span></div>
                     </div>
                 </div>
             </div>
@@ -216,9 +239,9 @@
                               </p>
                         </li>
                         <li>
-                            <span class="relative mx-auto mt-10 block h-5 w-5 rounded-full bg-primary">
+                            <span class="relative mx-auto mt-10 block h-5 w-5 rounded-full bg-[#004AAD]">
                             </span>
-                            <span class="relative mx-auto block h-full w-1 rounded-lg bg-primary">
+                            <span class="relative mx-auto block h-full w-1 rounded-lg bg-[#004AAD]">
                             </span>
                         </li>
                         <li class="mb-5 row-start-2 col-start-3 md:col-start-4">
@@ -238,9 +261,9 @@
                               </p>
                         </li>
                         <li class="row-start-2 col-start-2 md:col-start-3">
-                            <span class="relative mx-auto mt-10 block h-5 w-5 rounded-full bg-primary">
+                            <span class="relative mx-auto mt-10 block h-5 w-5 rounded-full bg-[#004AAD]">
                             </span>
-                            <span class="relative mx-auto block h-full w-1 rounded-lg bg-primary">
+                            <span class="relative mx-auto block h-full w-1 rounded-lg bg-[#004AAD]">
                             </span>
                         </li>
                         <li class="row-start-4 col-start-3 md:col-start-4">
@@ -252,9 +275,9 @@
                             </p>
                         </li>
                         <li class="row-start-3 col-start-2 md:col-start-3">
-                            <span class="relative mx-auto mt-10 block h-5 w-5 rounded-full bg-primary">
+                            <span class="relative mx-auto mt-10 block h-5 w-5 rounded-full bg-[#004AAD]">
                             </span>
-                            <span class="relative mx-auto block h-full w-1 rounded-lg bg-primary">
+                            <span class="relative mx-auto block h-full w-1 rounded-lg bg-[#004AAD]">
                             </span>
                         </li>
                         <li class="row-start-5 md:col-start-2">
@@ -265,117 +288,68 @@
                               </svg>2022 - ....</p>
                         </li>
                         <li class="col-start-2 row-start-4 md:col-start-3">
-                            <span class="relative mx-auto mt-10 block h-5 w-5 rounded-full bg-primary"></span>
-                            <span class="relative w-1 h-full bg-primary block mx-auto"></span>
+                            <span class="relative mx-auto mt-10 block h-5 w-5 rounded-full bg-[#004AAD]"></span>
+                            <span class="relative w-1 h-full bg-[#004AAD] block mx-auto"></span>
                         </li>
                         <li class="col-start-2 row-start-5 md:col-start-3">
-                            <span class="relative rounded-full mt-10 block bg-primary mx-auto h-5 w-5"></span>
+                            <span class="relative rounded-full mt-10 block bg-[#004AAD] mx-auto h-5 w-5"></span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
     <section class="pt-28 pb-20 bg-slate-100">
         <div class="container">
             <div>
                 <div class="text-center mb-16">
-                    <div class="flex justify-center">
-                        <span class="w-7 h-1 bg-slate-600 mt-2.5 mr-2"></span>
-                        <div id="pre-title" class=" text-md lg:text-2xl font-bold mb-2 tracking-widest">Pengalaman</div>
-                        <span class="w-7 h-1 bg-slate-600 mt-2.5 ml-2"></span>
+                    <div class="justify-center">
+                        <div id="pre-title" class=" text-white text-lg font-extrabold mb-2 lg:text-xl text-md tracking-widest"><span class="text-[#004AAD]">Pengalaman</span></div>
+                        <div id="pre-title" class=" text-white text-lg font-extrabold mb-2 lg:text-xl text-md"><span class="text-slate-900 text-2xl tracking-widest">Organisasi dan Kepanitiaan</span></div>
                     </div>
-                    <p class="text-sm text-secondary lg:text-lg">Berikut adalah organisasi atau kepanitiaan yang pernah 
+                    <p class="text-secondary text-sm font-semibold tracking-widest">Berikut adalah organisasi atau kepanitiaan yang pernah 
                        saya ikuti sejak di bangku SMP sampai sekarang</p>
                 </div>
             </div>
-            <div class="flex flex-wrap xl:w-10/12 xl:mx-auto">
-                <div class="w-full px-4 lg:w-1/3">
+            <div id="org" class="flex flex-wrap xl:w-full xl:mx-auto">
+                <div v-for="(batik, index) in batikItems" :key="index" class="w-full px-12 lg:w-1/3">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 transition duration-300 ease-in-out hover:scale-110">
-                        <img src="img/inofest.jpg" alt="Ilustrasi Tweak" class="w-full">
+                        <img :src="batik.image" alt="Ilustrasi Tweak" class="w-full">
                         <div class="py-7 px-6">
                             <div class="flex justify-between">
-                                <h3 class="mb-5 font-semibold text-dark">Inovation Festival</h3>
-                                <a href="https://drive.google.com/drive/folders/15MkUdxuUVkQlbNB9MFaKxhSNlsU_XGmx" class="hover:fill-purple-400 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <h3 class="mb-5 font-semibold text-dark">{{batik.title}}</h3>
+                                <a :href="batik.link" class="hover:fill-blue-500 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg></a>
                             </div>
-                            <p class="text-sm text-secondary text-justify lg:text"> Inofest merupakan kegiatan yang diselenggarakan untuk memamerkan
-                                karya - karya dari masing masing prodi di FTK.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full px-4 lg:w-1/3">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 transition duration-300 ease-in-out hover:scale-110">
-                        <img src="img/tweak.jpg" alt="Ilustrasi Tweak" class="w-full">
-                        <div class="py-7 px-6">
-                            <div class="flex justify-between">
-                                <h3 class="mb-5 font-semibold text-dark">PAT FTK</h3>
-                                <a href="https://drive.google.com/drive/folders/15IxqMHQpDSMV7zYdP-XaNRps6aoq1HTi" class="hover:fill-purple-400 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg></a>
-                            </div>
-                            <p class="text-sm text-secondary text-justify lg:text">Pegelaran Akhir Tahun (PAT) diselenggarakan untuk merayakan
-                                ulang tahun Fakultas Teknik dan Kejuruan.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full px-4 lg:w-1/3">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 transition duration-300 ease-in-out hover:scale-110">
-                        <img src="img/Screenshot_20230929_010323_VN - Video Editor.jpg" alt="Ilustrasi Tweak" class="w-full">
-                        <div class="py-7 px-6">
-                            <div class="flex justify-between">
-                                <h3 class="mb-5 font-semibold text-dark">KSPAN - Widyastana</h3>
-                                <a href="https://drive.google.com/drive/folders/14a7cKtGMGbzxEMLXmxm4mdm1I14XSC4v" class="hover:fill-purple-400 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg></a>
-                            </div>
-                            <p class="text-sm text-secondary text-justify lg:text">
-                                Kelompok Siswa Peduli AIDS dan Narkoba memiliki misi yaitu pencegahan penyebaran HIV/AIDS dan mengurangi stigma.
-                            </p>
+                            <p class="text-sm text-secondary text-justify lg:text">{{batik.description}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="portofolio" class="pt-28 pb-20 bg-slate-800">
+    <section id="portofolio" class="pt-28 pb-20 bg-slate-900">
         <div class="container">
             <div class="mb-16">
-                <div class="flex justify-center">
-                    <span class="w-7 h-1 bg-slate-50 mt-2.5 mr-2"></span>
-                    <div id="pre-title" class=" text-md text-slate-50 lg:text-2xl font-bold mb-2 tracking-widest">Portfolio</div>
-                    <span class="w-7 h-1 bg-slate-50 mt-2.5 ml-2"></span>
+                <div class="text-center justify-center">
+                    <div id="pre-title" class=" text-md text-slate-50 text-2xl font-extrabold mb-1 tracking-widest">Portofolio</div>
+                    <div id="pre-title" class=" text-white text-lg font-semibold mb-2 lg:text-xl text-md pt-8"><span class="text-gray-300 text-sm tracking-widest">Terdapat beberapa project yang telah saya kerjakan, khususnya untuk memenuhi beberapa mata kuliah</span></div>
                 </div>
             </div>
-            <div class="flex flex-wrap xl:w-9/12 xl:mx-auto">
-                <div class="w-full px-8 lg:w-1/2">
-                    <div class="bg-white rounded-xl transition overflow-hidden mb-10">
-                        <img src="img/CleanNow.jpg" alt="Ilustrasi Tweak" class="w-full rounded-xl">
-                        <div class="py-7 px-6">
-                            <div class="text-center flex justify-between">
-                                <h3 class="mb-5 font-semibold text-dark">Design HCI Project - CleanNow</h3>
-                                <a href="https://www.figma.com/proto/hBMi1sqZkYSOms7H4eqxEd/HCI-CLEANOIW?type=design&node-id=134-191&t=OQ809Vdpn40umqwq-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=324%3A2820&show-proto-sidebar=1" target="_blank" class="hover:fill-purple-400 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg></a>
+            <div class="flex flex-wrap xl:w-full xl:mx-auto">
+                <div v-for = "(port, index) in portoItems" :key="index" class="w-full px-8 lg:w-1/3"> 
+                    <div>
+                        <div class="bg-white rounded-xl transition overflow-hidden mb-10">
+                            <img :src="port.image" alt="Ilustrasi Tweak" class="w-full rounded-xl shadow-sm">
+                            <div class="py-7 px-6">
+                                <div class="text-center flex justify-between">
+                                    <h3 class="mb-5 font-semibold text-dark">{{ port.title }}</h3>
+                                    <a :href="port.link" target="_blank" class="hover:fill-blue-500 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg></a>
+                                </div>
+                                <p class="text-sm text-gray-500 text-justify lg:text"> {{ port.description }}
+                                </p>
                             </div>
-                            <p class="text-sm text-secondary text-justify lg:text"> CleanNow merupakan sebuah aplikasi laundry online berbasis mobile yang 
-                                memudahkan banyak orang dalam mencuci pakaian tersedia banyak fitur
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full px-8 lg:w-1/2">
-                    <div class="bg-white rounded-xl overflow-hidden mb-10 transition">
-                        <img src="img/Screenshot 2023-09-29 163111.png" alt="Ilustrasi Tweak" class="w-full rounded-xl">
-                        <div class="py-7 px-6">
-                            <div class="flex justify-between text-center">
-                                <h3 class="mb-5 font-semibold text-dark">Design Web App - GigaClean</h3>
-                                <a href="https://www.figma.com/proto/taTrphmEEkJqVr6w7YO93r/Untitled?type=design&node-id=226-543&t=WfuMyLvs3GZqoqIi-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=142%3A2&show-proto-sidebar=1" target="_blank" class="hover:fill-purple-400 transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg></a>
-                            </div>
-                            <p class="text-sm text-secondary text-justify lg:text"> GigaClean merupakan sebuah app laundry berbasis web yang 
-                                memudahkan banyak orang dalam mencuci pakaian karena tersedia banyak fitur
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -386,7 +360,7 @@
     <section id = "contact" class="bg-slate-50 pt-28 pb-20">
         <div class="container text-center">
             <div class="mb-20">
-                <div id="pre-title" class=" text-slate-800 text-xl font-bold mb-6 lg:text-2xl ">Hubungi Saya</div>
+                <div id="pre-title" class=" text-slate-900  font-extrabold mb-2 text-2xl text-md tracking-widest">Hubungi<span class=" text-2xl text-[#004AAD]"> Saya</span></div>
             </div>
             <div class="w-full lg:flex lg:flex-wrap xl:mx-auto">
                 <div class="mb-10 lg:w-1/2">
@@ -400,12 +374,12 @@
                             <input class ="p-3 pl-5 w-full text-sm rounded-md bg-slate-100 lg:w-2/3" name="email" type="text" id="email" placeholder="Email">
                         </div>
                         <textarea class="p-3 pl-5 w-full text-sm rounded-md bg-slate-100 mb-4 lg:w-2/3" id="" name="message" cols="30" rows="10" placeholder="Pesan....."></textarea>
-                        <div><button class="p-3 pl-5 w-full text-sm font-bold rounded-md bg-violet-500 hover:bg-violet-300 transition duration-300 text-white lg:w-2/3">Kirim</button></div>
+                        <div><button class="p-3 pl-5 w-full text-sm font-bold rounded-md bg-[#004AAD] hover:bg-blue-500 transition duration-300 text-white lg:w-2/3">Kirim</button></div>
                     </form>
                 </div>
                 <div class="w-full lg:w-1/2 mt-5 lg:mt-0">
                     <div class="flex flex-wrap">
-                        <div class="icon mr-7 mb-14 bg-slate-200 p-3 rounded-md fill-violet-700 lg:p-4 lg:mr-10">
+                        <div class="icon mr-7 mb-14 bg-slate-200 p-3 rounded-md fill-[#004AAD] lg:p-4 lg:mr-10">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path d="M12 0c-3.148 0-6 2.553-6 5.702 0 4.682 4.783 5.177 6 12.298 1.217-7.121 6-7.616 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm12 16l-6.707-2.427-5.293 2.427-5.581-2.427-6.419 2.427 4-9 3.96-1.584c.38.516.741 1.08 1.061 1.729l-3.523 1.41-1.725 3.88 2.672-1.01 1.506-2.687-.635 3.044 4.189 1.789.495-2.021.465 2.024 4.15-1.89-.618-3.033 1.572 2.896 2.732.989-1.739-3.978-3.581-1.415c.319-.65.681-1.215 1.062-1.731l4.021 1.588 3.936 9z"/></svg>
                         </div>
@@ -415,17 +389,17 @@
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="icon mr-7 mb-14 bg-slate-200 p-3 rounded-md fill-violet-700 lg:p-4 lg:mr-10">
+                        <div class="icon mr-7 mb-14 bg-slate-200 p-3 rounded-md fill-[#004AAD] lg:p-4 lg:mr-10">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>
                         </div>
                         <div class="info text-left">
                             <h4 class="text-sm font-bold pb-2 lg:text-base">No Telepon</h4>
-                            <p class="text-sm lg:text-base">082235102856</p>
+                            <p class="text-sm lg:text-base">0822-3510-2856</p>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="icon mr-7 mb-14 bg-slate-200 p-3 rounded-md fill-violet-700 lg:p-4 lg:mr-10">
+                        <div class="icon mr-7 mb-14 bg-slate-200 p-3 rounded-md fill-[#004AAD] lg:p-4 lg:mr-10">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
                         </div>
@@ -438,11 +412,205 @@
             </div>
         </div>
     </section>
-    <footer class="bg-slate-800 pt-12 pb-10">
-        <div class="items-center text-center"> 
-            <p class="text-sm text-slate-200 lg:text-md">@Created with ❤️ by Kadek Ardy Wirakusuma</p>
+    <footer>
+        <div class=" bg-gray-900 pl-8 pr-8 lg:pl-20 lg:pr-20 pt-20 pb-5">
+        <div class="w-full text-white">
+            <div class="lg:flex flex-wrap justify-between">
+                <div class="">
+                    <div class="info pb-10">
+                        <h1 class="pb-4 font-bold text-lg text-white">Hubungi Saya</h1>
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            <p class="pb-4 text-slate-400 text-sm">Banyuning, Buleleng, Bali-Indonesia</p>
+                        </div>
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 mr-2 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                            </svg>
+                            <p class="pb-4 text-slate-400 text-sm">0822-3510-2856</p>
+                        </div>
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                            </svg>
+                            <p class="pb-4 text-slate-400 text-sm">ardywirakusuma16@gmail.com</p>
+                        </div>
+                    </div>             
+                </div>
+                <div class="pb-10">
+                    <h1 class="font-bold pb-5 text-white text-lg">Tautan</h1>
+                    <ul>
+                        <li class="mb-4 text-slate-400 text-sm"><a href="#">Home</a></li>
+                        <li class="mb-4 text-slate-400 text-sm"><a href="#">About</a></li>
+                        <li class="mb-4 text-slate-400 text-sm"><a href="#">Portfolio</a></li>
+                        <li class="mb-4 text-slate-400 text-sm"><a href="#">Contact Me</a></li>
+                        <li class="mb-4 text-slate-400 text-sm"><a href="#">Product</a></li>
+                    </ul>
+                </div>
+                <div class="pb-10">
+                    <h1 class=" pb-5 font-bold text-white text-lg">Bantuan</h1>
+                    <ul>
+                        <li class="mb-4 text-slate-400 text-sm"><a href="#">Help Center</a></li>
+                        <li class="mb-4 text-slate-400 text-sm"><a href="#">Pertanyaan Umum (FAQ)</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h1 class=" pb-5 font-bold text-white"></h1>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+            <div class="text-center sm:flex sm:items-center sm:justify-between">
+            <span class="text-xs lg:text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 Ardy Wirakusuma. All Rights Reserved.
+            </span>
+            <div class="justify-center flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <a href="/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition duration-300 ease-in-out">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                </a>
+                <a href="/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition duration-300 ease-in-out">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                </a>
+                <a href="/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition duration-300 ease-in-out">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                    </path>
+                </svg>
+                </a>
+                <a href="/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition duration-300 ease-in-out">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                </a>
+                <a href="/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition duration-300 ease-in-out">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                </a>
+            </div>
+            </div>
+        </div>
         </div>
     </footer>
     <script src="dist/script.js"></script>
-</body>
+    <script>
+        new Vue({
+          el: '#app',
+          data: {
+            activeIndex: 0,
+            carouselItems: [
+                { image: 'img/FB_IMG_1695783211509.jpg',
+                  caption: 'CARD Band at Graduation Party',
+                  text: 'CARD Band adalah sebuah band yang terbentuk dari kalangan siswa SMA. Meskipun baru dirintis, namun kehadirannya pada saat di atas panggung selalu meninggalkan kesan yang mendalam bagi para penonton' 
+                },
+                { image: 'img/1705494172547.jpg', 
+                  caption: 'Harmoni Bahasa: Melodi Makna dalam Perayaan Bulan Bahasa Bersama CARD Band',
+                  text:'Pada saat bulan bahasa , CARD band yang terdiri dari 6 personil turut merayakan dengan penuh semangat dan keceriaan. Dalam suasana yang dipenuhi kata-kata indah dan melodi merdu, CARD band hadir sebagai bagian tak terpisahkan dari perayaan bahasa, memberikan nuansa yang unik dan mengesankan.' 
+                },
+                { image: 'img/IMG-20221208-WA0007.jpg', 
+                caption: 'NGA Band : Suara Unik, Rhythm Menggoda dalam Permainan Musik Kreatif',
+                text:'Demi memenuhi Tugas Akhir Semester Genap di kala waktu SMA, saya dan teman - teman membentuk sebuah band akustik yang kami namakan "NGA Band". Band ini cukup unik karena beberapa lagu yang diaransemen adalah lagu yang berasal dari game terkenal' 
+              },
+            ],
+            autoSlideInterval: null,
+          },
+          methods: {
+            startAutoSlide() {
+              this.autoSlideInterval = setInterval(() => {
+                this.nextSlide();
+              }, 5500); 
+            },
+            stopAutoSlide() {
+              clearInterval(this.autoSlideInterval);
+            },
+            nextSlide() {
+              this.activeIndex = (this.activeIndex + 1) % this.carouselItems.length;
+            },
+            prevSlide() {
+              this.activeIndex = (this.activeIndex - 1 + this.carouselItems.length) % this.carouselItems.length;
+            },
+          },
+          mounted() {
+            this.startAutoSlide();
+          },
+          watch: {
+            activeIndex() {
+              this.stopAutoSlide();
+              this.startAutoSlide();
+            },
+          },
+        });
+
+    </script>
+    <script>
+        new Vue({
+            el: '#org',
+            data: {
+                batikItems : [
+                    {
+                        title: 'Inovation Festival',
+                        image: 'img/inofest.jpg',
+                        description: 'Inofest merupakan kegiatan yang diselenggarakan untuk memamerkan karya - karya dari masing masing prodi di FTK.',
+                        link: 'https://drive.google.com/drive/folders/15MkUdxuUVkQlbNB9MFaKxhSNlsU_XGmx'
+                    },
+                    {
+                        title: 'PAT FTK',
+                        image: 'img/tweak.jpg',
+                        description: 'Pegelaran Akhir Tahun (PAT) diselenggarakan untuk merayakan ulang tahun Fakultas Teknik dan Kejuruan.',
+                        link: '#'
+                    },
+                    {
+                        title: 'KSPAN - Widyastana',
+                        image: 'img/Screenshot_20230929_010323_VN - Video Editor.jpg',
+                        description: 'Kelompok Siswa Peduli AIDS dan Narkoba memiliki misi yaitu pencegahan penyebaran HIV/AIDS dan mengurangi stigma.',
+                        link: '#'
+                    },
+                ]
+            }
+        });
+        
+        new Vue({
+            el: '#portofolio',
+            data: {
+                portoItems : [
+                {
+                    title: 'Design HCI Project - CleanNow',
+                    image: 'img/CleanNow.jpg',
+                    description: 'Pada project ini kami menggunakan figma untuk membuat rancangan aplikasi laundry online berbasis mobile, yang di dalamnya terdapat prototype lengkap.',
+                    link: 'https://www.figma.com/proto/hBMi1sqZkYSOms7H4eqxEd/HCI-CLEANOIW?type=design&node-id=134-191&t=OQ809Vdpn40umqwq-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=324%3A2820&show-proto-sidebar=1'
+                },
+                {
+                    title: 'Design Web App - GigaClean',
+                    image: 'img/Screenshot 2024-01-18 174105.png',
+                    description: 'Membuat sebuah rancangan aplikasi laundry online berbasis web yang kami namakan sebagai GigaClean, terdapat rancangan fitur seperti filtering produk, review dan transaksi',
+                    link: 'https://www.figma.com/file/taTrphmEEkJqVr6w7YO93r/Untitled?type=design&node-id=0%3A1&mode=design&t=sh1MKiegedfbsbRw-1'
+                },
+                {
+                    title: 'BatikNesia Web App',
+                    image: 'img/batiknesia.png',
+                    description: 'BatikNesia merupakan sebuah aplikasi berbasis website yang dibuat dengan beberapa teknologi seperti Vue.js, Inertia.js, Laravel dan masih banyak lagi',
+                    link: 'https://project.batiknesia.my.id'
+                
+                },
+                ]
+            }
+        })
+    </script>
+    </body>
 </html>

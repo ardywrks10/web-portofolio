@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['index.html', 'vue.html'],
+  darkMode:'class',
   theme: {
     container: {
       center: true,
