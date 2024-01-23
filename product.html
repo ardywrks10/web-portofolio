@@ -123,18 +123,18 @@
     <section id="keranjang" class="pt-20 pb-20 bg-slate-100">
         <div class="container">
             <div class="flex flex-wrap">
-              <div class="overflow-y-auto h-[600px] w-full px-4 lg:w-2/3 lg:px-8 bg-white rounded-lg p-4 mb-16">
+              <div class=" w-full px-4 lg:w-2/3 lg:px-8 bg-white rounded-lg p-4 mb-16">
                 <h2 class="font-extrabold text-dark text-xl mt-5 mb-5">List Barang</h2>
                 <div class="mb-6 lg:mb-10 lg:flex">
-                  <select v-model="selectedCategory" class="bg-green-500 text-white py-2 px-3 font-semibold w-full rounded-sm lg:w-auto lg:rounded-l-lg mb-3 lg:mb-0">
+                  <select v-model="selectedCategory" class="bg-green-500 text-white py-2 px-3 font-semibold w-full rounded-md lg:w-auto lg:rounded-l-lg mb-3 lg:mb-0">
                     <option  value="Semua Barang" class="bg-white text-slate-600 font-semibold">Pilih Barang</option>
                     <option v-for="(item, index) in items" :value="item.type" :key="item.id" class="bg-white text-slate-600 font-medium">
                       {{ item.type }}
                     </option>
                   </select>
                   <div class="relative w-full">
-                    <input type="search" id="search-dropdown" v-model="selectedSearch" class="block p-2 lg:p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-sm lg:rounded-r-lg lg:border-l-gray-50 border-l-2 border border-gray-300"  placeholder="Chitato, Lays, Rexona, Beras ">
-                    <button type="submit" class="absolute top-0 right-0 p-2 lg:p-2.5 text-sm font-medium h-full text-white bg-green-500 rounded-sm lg:rounded-r-lg border border-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none">
+                    <input type="search" id="search-dropdown" v-model="selectedSearch" class="rounded-md block p-2 lg:p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50  lg:rounded-r-lg lg:border-l-gray-50 border-l-2 border border-gray-300"  placeholder="Chitato, Lays, Rexona, Beras ">
+                    <button type="submit" class="absolute top-0 rounded-md right-0 p-2 lg:p-2.5 text-sm font-medium h-full text-white bg-green-500  lg:rounded-r-lg border border-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                         </svg>
@@ -222,6 +222,7 @@
             </div>
         </div>
     </section >
+    
     <footer class="pt-12 pb-12 bg-slate-800 ">
       <div class="flex flex-wrap mx-auto px-5 text-white xl:w-11/12">
         <div class="lg:w-1/4 px-5 pb-4 text-lg">
