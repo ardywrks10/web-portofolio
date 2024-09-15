@@ -4,15 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portofolio | Ardy Wirakusuma</title>
+        <title>Portfolio | Ardy Wirakusuma</title>
         <link href="dist/output.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+        <!-- Import font Press Start 2P -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
         <style type="text/tailwindcss">
             @layer utilities {
-                .nav{
+                .nav {
                     @apply relative ml-10 text-gray-500 font-bold tracking-[1px]
                     hover:text-blue-500;
                 }
@@ -45,8 +48,12 @@
             @keyframes typing {
                 from { width: 0}
             }
+
+            /* Gunakan font Press Start 2P */
+            body {
+                font-family: "Pixelify Sans", sans-serif;
+              }
         </style>
-        
     </head>
     
 <body>
@@ -54,7 +61,7 @@
         <nav class="py-2.5 bg-gray-900 xl:pt-10 pb-10">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="#" class="flex items-center">
-                    <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Rojo Langit</span>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Rojo<span>Langit</span></span>
                 </a>
                 <div class="flex items-center lg:order-2">
                     <div class="hidden mt-2 mr-4 sm:inline-block">
@@ -93,7 +100,7 @@
         <div class="max-w-screen-xl px-4 pt-20 pb-8 mx-auto flex flex-col items-center lg:gap-8 xl:gap-0 lg:py-16 lg:pt-28">
             <div class="text-center">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-white">Helloo, I'm <br><span class="xl:text-4xl">Kadek Ardy Wirakusuma</span></h1>
-                <p class="max-w-2xl mb-6 font-light  lg:mb-8 md:text-lg lg:text-xl text-gray-400">Hello, I’m a Computer Science student interested in developing intelligent solutions through the application of Machine Learning models. Check out my activities through the link below.</p>
+                <p class="max-w-2xl mb-6 font-light  lg:mb-8 md:text-lg lg:text-xl text-gray-400">Computer Science student that interested to develop intelligent solutions through application of Machine Learning models. Check out my activities through the link below.</p>
                 <div class="space-y-4 sm:flex sm:justify-center sm:space-y-0 sm:space-x-4">
                     <a href="https://github.com/ardywrks10" class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         <svg class="w-4 h-4 mr-2 text-white " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> GitHub
@@ -109,22 +116,21 @@
         <div class="container">
             <div class="pb-10">
                 <div class="flex">
-                    <div id="pre-title" class=" text-white text-xl font-extrabold mb-2 lg:text-2xl text-md tracking-widest">Website dan Media Sosial</div>
+                    <div id="pre-title" class=" text-white text-xl font-extrabold mb-2 lg:text-2xl text-md tracking-widest">Website and Social Media</div>
                 </div>
             </div>
             <div class="flex flex-wrap">
                 <div class="w-full lg:pr-4 mb-10 lg:w-1/2">
-                    <h4 class=" text-white font-bold mb-3 lg:text-lg">Tentang Website</h4>
+                    <h4 class=" text-white font-bold mb-3 lg:text-lg">About Website</h4>
                     <p class="text-justify text-slate-100 lg:text-lg">
-                        Website ini mencakup minat, hobi, pendidikan maupun pengalaman berharga yang pernah
-                        saya tempuh dan juga website ini digunakan untuk belajar seputar mata kuliah Teknologi Web.
+                        This website include my interests, hobbies, education as well as valuable experiences i have gone through and this website also used for learning about web technology course.
                     </p>
                 </div>
                 <div class="w-full lg:px-4 mb-10 lg:w-1/2">
-                    <h3 class=" text-white font-bold mb-3 lg:text-lg">Media Sosial</h3>
+                    <h3 class=" text-white font-bold mb-3 lg:text-lg">Social Media</h3>
                     <p class="text-justify text-slate-100 lg:text-lg mb-5">
-                        Terdapat beberapa media sosial yang saya miliki, apabila teman - teman ingin berkomunikasi dan tetap terhubung silahkan klik 
-                        ikon di bawah ini.
+                        I have several social media accounts. If you would like to communicate and stay connected with me, 
+                        please click the icons below.
                     </p>
                     <div class="flex items-center mt-3">
                         <a href="https://instagram.com/skrwydra_?igshid=NGVhN2U2NjQ0Yg==" target="_blank" class="mr-3 w-7 h-7 rounded-full flex items-center justify-center border transition duration-300 ease-in-out border-white hover:bg-blue-500 fill-white hover:border-[#004AAD]">
@@ -262,7 +268,7 @@
         <div class="container">
             <div class="mb-16">
                 <div class="text-center justify-center">
-                    <div id="pre-title" class=" text-md text-slate-50 text-3xl font-extrabold mb-1 tracking-widest">Portofolio</div>
+                    <div id="pre-title" class=" text-md text-slate-50 text-3xl font-extrabold mb-1 tracking-widest">Portfolio</div>
                 </div>
             </div>
             <div class="flex flex-wrap xl:w-full xl:mx-auto">
@@ -289,20 +295,20 @@
     <section id = "contact" class="bg-slate-50 pt-28 pb-20">
         <div class="container text-center">
             <div class="mb-20">
-                <div id="pre-title" class=" text-slate-900  font-extrabold mb-2 text-3xl text-md tracking-widest">Contact<span class=" text-2xl text-[#004AAD]"> Person</span></div>
+                <div id="pre-title" class=" text-slate-900  font-extrabold mb-2 text-3xl text-md tracking-widest">Contact<span class="text-3xl text-[#004AAD]"> Person</span></div>
             </div>
             <div class="w-full lg:flex lg:flex-wrap xl:mx-auto">
                 <div class="mb-10 lg:w-1/2">
                     <form class="w-full" action="https://formspree.io/f/xayglqyj" method="POST">
                         <div class="pb-5">
                             <label for="username"></label>
-                            <input class ="p-3 pl-5 w-full text-sm rounded-md border bg-slate-100 lg:w-2/3" type="text" name = "name" id="username" placeholder="Nama Lengkap">
+                            <input class ="p-3 pl-5 w-full text-sm rounded-md border bg-slate-100 lg:w-2/3" type="text" name = "name" id="username" placeholder="Name">
                         </div>
                         <div class="pb-5">
                             <label for="email"></label>
                             <input class ="p-3 pl-5 w-full text-sm rounded-md bg-slate-100 lg:w-2/3" name="email" type="text" id="email" placeholder="Email">
                         </div>
-                        <textarea class="p-3 pl-5 w-full text-sm rounded-md bg-slate-100 mb-4 lg:w-2/3" id="" name="message" cols="30" rows="10" placeholder="Pesan....."></textarea>
+                        <textarea class="p-3 pl-5 w-full text-sm rounded-md bg-slate-100 mb-4 lg:w-2/3" id="" name="message" cols="30" rows="10" placeholder="Message....."></textarea>
                         <div><button class="p-3 pl-5 w-full text-sm font-bold rounded-md bg-[#004AAD] hover:bg-blue-500 transition duration-300 text-white lg:w-2/3">Kirim</button></div>
                     </form>
                 </div>
@@ -520,7 +526,7 @@
                 portoItems : [
                 {
                     title: 'Design HCI Project - CleanNow',
-                    image: 'img/CleanNow.jpg',
+                    image: 'img/cleannow-transformed.png',
                     description: 'Pada project ini kami menggunakan figma untuk membuat rancangan aplikasi laundry online berbasis mobile, yang di dalamnya terdapat prototype lengkap.',
                     link: 'https://www.figma.com/proto/hBMi1sqZkYSOms7H4eqxEd/HCI-CLEANOIW?type=design&node-id=134-191&t=OQ809Vdpn40umqwq-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=324%3A2820&show-proto-sidebar=1'
                 },
